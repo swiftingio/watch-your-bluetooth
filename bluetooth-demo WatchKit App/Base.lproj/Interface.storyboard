@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13034"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="bluetooth_demo_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="1" alignment="left" text="Bird" textAlignment="center" id="Fvb-69-6Yy"/>
+                        <imageView width="100" height="100" alignment="center" image="bird" contentMode="scaleAspectFit" id="vHd-qU-Azf"/>
+                        <label width="1" alignment="center" verticalAlignment="bottom" text="disconnected" textAlignment="center" id="Oiq-vB-SAe"/>
+                    </items>
+                    <connections>
+                        <outlet property="image" destination="vHd-qU-Azf" id="TB2-mC-qqc"/>
+                        <outlet property="label" destination="Oiq-vB-SAe" id="VwI-jl-p0k"/>
+                        <outlet property="name" destination="Fvb-69-6Yy" id="rVl-0n-wyT"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+    </scenes>
+</document>
