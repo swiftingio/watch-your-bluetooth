@@ -8,10 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		690C995F1F006F8E00864897 /* MyPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C995E1F006F8E00864897 /* MyPeripheral.swift */; };
-		690C99601F0072FC00864897 /* WatchYourBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69206F441F0061FE0012365B /* WatchYourBluetooth.swift */; };
 		69206F501F00625A0012365B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69206F491F0061FE0012365B /* ExtensionDelegate.swift */; };
 		69206F511F00625A0012365B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4F2D81F00607600B76FCB /* InterfaceController.swift */; };
-		69206F541F00625A0012365B /* WatchYourBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69206F441F0061FE0012365B /* WatchYourBluetooth.swift */; };
+		69206F541F00625A0012365B /* BirdCentral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69206F441F0061FE0012365B /* BirdCentral.swift */; };
 		697E85761F00682E003B925C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E85751F00682E003B925C /* AppDelegate.swift */; };
 		697E85781F00682E003B925C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697E85771F00682E003B925C /* ViewController.swift */; };
 		697E857A1F00682E003B925C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 697E85791F00682E003B925C /* Assets.xcassets */; };
@@ -25,8 +24,15 @@
 		69C4F2CD1F00607600B76FCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C4F2CC1F00607600B76FCB /* Assets.xcassets */; };
 		69C4F2D41F00607600B76FCB /* bluetooth-demo WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 69C4F2D31F00607600B76FCB /* bluetooth-demo WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		69C4F2DD1F00607600B76FCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C4F2DC1F00607600B76FCB /* Assets.xcassets */; };
-		69F54F1E1F010D950005F8F5 /* WatchYourBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69206F441F0061FE0012365B /* WatchYourBluetooth.swift */; };
+		69F54F1E1F010D950005F8F5 /* BirdCentral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69206F441F0061FE0012365B /* BirdCentral.swift */; };
 		69F54F261F0113840005F8F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69F54F251F01136C0005F8F5 /* Main.storyboard */; };
+		69FD30A41F0A25A300C0991F /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD30A31F0A25A300C0991F /* Data+Extension.swift */; };
+		69FD30A51F0A25B800C0991F /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD30A31F0A25A300C0991F /* Data+Extension.swift */; };
+		69FD30A71F0A25D000C0991F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD30A61F0A25D000C0991F /* UIColor+Extension.swift */; };
+		69FD30A81F0A25E200C0991F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD30A61F0A25D000C0991F /* UIColor+Extension.swift */; };
+		69FD30AA1F0A25FE00C0991F /* BirdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD30A91F0A25FE00C0991F /* BirdService.swift */; };
+		69FD30AB1F0A25FE00C0991F /* BirdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD30A91F0A25FE00C0991F /* BirdService.swift */; };
+		69FD30AC1F0A25FE00C0991F /* BirdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD30A91F0A25FE00C0991F /* BirdService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +80,7 @@
 /* Begin PBXFileReference section */
 		690C995E1F006F8E00864897 /* MyPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPeripheral.swift; sourceTree = "<group>"; };
 		690C99621F00868000864897 /* bluetooth-mac-demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "bluetooth-mac-demo.entitlements"; sourceTree = "<group>"; };
-		69206F441F0061FE0012365B /* WatchYourBluetooth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchYourBluetooth.swift; sourceTree = "<group>"; };
+		69206F441F0061FE0012365B /* BirdCentral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdCentral.swift; sourceTree = "<group>"; };
 		69206F491F0061FE0012365B /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		697E85731F00682E003B925C /* bluetooth-mac-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "bluetooth-mac-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		697E85751F00682E003B925C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +103,9 @@
 		69C4F2DC1F00607600B76FCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		69C4F2DE1F00607600B76FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69F54F251F01136C0005F8F5 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		69FD30A31F0A25A300C0991F /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		69FD30A61F0A25D000C0991F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		69FD30A91F0A25FE00C0991F /* BirdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,7 +207,10 @@
 		69F54F211F0111930005F8F5 /* common */ = {
 			isa = PBXGroup;
 			children = (
-				69206F441F0061FE0012365B /* WatchYourBluetooth.swift */,
+				69206F441F0061FE0012365B /* BirdCentral.swift */,
+				69FD30A31F0A25A300C0991F /* Data+Extension.swift */,
+				69FD30A61F0A25D000C0991F /* UIColor+Extension.swift */,
+				69FD30A91F0A25FE00C0991F /* BirdService.swift */,
 			);
 			name = common;
 			sourceTree = "<group>";
@@ -368,7 +380,7 @@
 				697E85781F00682E003B925C /* ViewController.swift in Sources */,
 				697E85761F00682E003B925C /* AppDelegate.swift in Sources */,
 				690C995F1F006F8E00864897 /* MyPeripheral.swift in Sources */,
-				690C99601F0072FC00864897 /* WatchYourBluetooth.swift in Sources */,
+				69FD30AC1F0A25FE00C0991F /* BirdService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,8 +389,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				69C4F2B81F00607600B76FCB /* ViewController.swift in Sources */,
+				69FD30A41F0A25A300C0991F /* Data+Extension.swift in Sources */,
+				69FD30AA1F0A25FE00C0991F /* BirdService.swift in Sources */,
 				69C4F2B61F00607600B76FCB /* AppDelegate.swift in Sources */,
-				69F54F1E1F010D950005F8F5 /* WatchYourBluetooth.swift in Sources */,
+				69F54F1E1F010D950005F8F5 /* BirdCentral.swift in Sources */,
+				69FD30A71F0A25D000C0991F /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,9 +401,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				69206F541F00625A0012365B /* WatchYourBluetooth.swift in Sources */,
+				69206F541F00625A0012365B /* BirdCentral.swift in Sources */,
+				69FD30A51F0A25B800C0991F /* Data+Extension.swift in Sources */,
+				69FD30AB1F0A25FE00C0991F /* BirdService.swift in Sources */,
 				69206F511F00625A0012365B /* InterfaceController.swift in Sources */,
 				69206F501F00625A0012365B /* ExtensionDelegate.swift in Sources */,
+				69FD30A81F0A25E200C0991F /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
