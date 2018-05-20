@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5110544320B13FC900F59678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110544220B13FC900F59678 /* AppDelegate.swift */; };
+		5110544520B13FC900F59678 /* PeripheralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5110544420B13FC900F59678 /* PeripheralViewController.swift */; };
+		5110544820B13FC900F59678 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5110544620B13FC900F59678 /* Main.storyboard */; };
+		5110545220B13FFB00F59678 /* MyPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C995E1F006F8E00864897 /* MyPeripheral.swift */; };
+		5110545420B145D900F59678 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD30A61F0A25D000C0991F /* UIColor+Extension.swift */; };
+		513F2E9F20B1492200A2DD6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69C4F2BE1F00607600B76FCB /* LaunchScreen.storyboard */; };
+		513F2EA020B15E4800A2DD6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C4F2BC1F00607600B76FCB /* Assets.xcassets */; };
+		5165143F20B1BE5B007CF9FC /* CBCentralManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5165143E20B1BE5B007CF9FC /* CBCentralManagerProtocol.swift */; };
+		5165144020B1BE6C007CF9FC /* CBCentralManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5165143E20B1BE5B007CF9FC /* CBCentralManagerProtocol.swift */; };
+		5165144320B1BFDB007CF9FC /* CBPeripheralManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5165144120B1BFDB007CF9FC /* CBPeripheralManagerProtocol.swift */; };
+		5165144420B1BFDB007CF9FC /* CBPeripheralProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5165144220B1BFDB007CF9FC /* CBPeripheralProtocol.swift */; };
+		5165144520B1BFE6007CF9FC /* CBPeripheralManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5165144120B1BFDB007CF9FC /* CBPeripheralManagerProtocol.swift */; };
+		5165144620B1BFEA007CF9FC /* CBPeripheralProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5165144220B1BFDB007CF9FC /* CBPeripheralProtocol.swift */; };
+		51A5556F20B2EE68007C7CAB /* CBCharacteristicProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5556E20B2EE68007C7CAB /* CBCharacteristicProtocol.swift */; };
+		51A5557020B2EE68007C7CAB /* CBCharacteristicProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5556E20B2EE68007C7CAB /* CBCharacteristicProtocol.swift */; };
+		51A5557220B2F03D007C7CAB /* CBServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5557120B2F03D007C7CAB /* CBServiceProtocol.swift */; };
+		51A5557320B2F03D007C7CAB /* CBServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5557120B2F03D007C7CAB /* CBServiceProtocol.swift */; };
 		690C995F1F006F8E00864897 /* MyPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C995E1F006F8E00864897 /* MyPeripheral.swift */; };
 		69206F501F00625A0012365B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69206F491F0061FE0012365B /* ExtensionDelegate.swift */; };
 		69206F511F00625A0012365B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4F2D81F00607600B76FCB /* InterfaceController.swift */; };
@@ -32,7 +49,6 @@
 		69FD30A81F0A25E200C0991F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD30A61F0A25D000C0991F /* UIColor+Extension.swift */; };
 		69FD30AA1F0A25FE00C0991F /* BirdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD30A91F0A25FE00C0991F /* BirdService.swift */; };
 		69FD30AB1F0A25FE00C0991F /* BirdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD30A91F0A25FE00C0991F /* BirdService.swift */; };
-		69FD30AC1F0A25FE00C0991F /* BirdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD30A91F0A25FE00C0991F /* BirdService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +94,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5110544020B13FC900F59678 /* Peripheral.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Peripheral.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5110544220B13FC900F59678 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5110544420B13FC900F59678 /* PeripheralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeripheralViewController.swift; sourceTree = "<group>"; };
+		5110544720B13FC900F59678 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5110544920B13FCB00F59678 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5110544E20B13FCB00F59678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5165143E20B1BE5B007CF9FC /* CBCentralManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBCentralManagerProtocol.swift; sourceTree = "<group>"; };
+		5165144120B1BFDB007CF9FC /* CBPeripheralManagerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPeripheralManagerProtocol.swift; sourceTree = "<group>"; };
+		5165144220B1BFDB007CF9FC /* CBPeripheralProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPeripheralProtocol.swift; sourceTree = "<group>"; };
+		51A5556E20B2EE68007C7CAB /* CBCharacteristicProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCharacteristicProtocol.swift; sourceTree = "<group>"; };
+		51A5557120B2F03D007C7CAB /* CBServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBServiceProtocol.swift; sourceTree = "<group>"; };
 		690C995E1F006F8E00864897 /* MyPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPeripheral.swift; sourceTree = "<group>"; };
 		690C99621F00868000864897 /* bluetooth-mac-demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "bluetooth-mac-demo.entitlements"; sourceTree = "<group>"; };
 		69206F441F0061FE0012365B /* BirdCentral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdCentral.swift; sourceTree = "<group>"; };
@@ -109,6 +136,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5110543D20B13FC900F59678 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		697E85701F00682E003B925C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,7 +167,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		697E85741F00682E003B925C /* bluetooth-mac-demo */ = {
+		5110544120B13FC900F59678 /* iOS-Peripheral */ = {
+			isa = PBXGroup;
+			children = (
+				5110544220B13FC900F59678 /* AppDelegate.swift */,
+				5110544420B13FC900F59678 /* PeripheralViewController.swift */,
+				5110544620B13FC900F59678 /* Main.storyboard */,
+				5110544920B13FCB00F59678 /* Assets.xcassets */,
+				5110544E20B13FCB00F59678 /* Info.plist */,
+			);
+			path = "iOS-Peripheral";
+			sourceTree = "<group>";
+		};
+		51A5557420B2F13E007C7CAB /* CBProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				5165143E20B1BE5B007CF9FC /* CBCentralManagerProtocol.swift */,
+				5165144120B1BFDB007CF9FC /* CBPeripheralManagerProtocol.swift */,
+				5165144220B1BFDB007CF9FC /* CBPeripheralProtocol.swift */,
+				51A5556E20B2EE68007C7CAB /* CBCharacteristicProtocol.swift */,
+				51A5557120B2F03D007C7CAB /* CBServiceProtocol.swift */,
+			);
+			name = CBProtocols;
+			sourceTree = "<group>";
+		};
+		51A5557520B2F161007C7CAB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				69FD30A31F0A25A300C0991F /* Data+Extension.swift */,
+				69FD30A61F0A25D000C0991F /* UIColor+Extension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		697E85741F00682E003B925C /* macOS-Peripheral */ = {
 			isa = PBXGroup;
 			children = (
 				69F54F251F01136C0005F8F5 /* Main.storyboard */,
@@ -144,17 +211,17 @@
 				697E857E1F00682E003B925C /* Info.plist */,
 				690C99621F00868000864897 /* bluetooth-mac-demo.entitlements */,
 			);
-			path = "bluetooth-mac-demo";
+			path = "macOS-Peripheral";
 			sourceTree = "<group>";
 		};
 		69C4F2A91F00607600B76FCB = {
 			isa = PBXGroup;
 			children = (
-				69F54F211F0111930005F8F5 /* common */,
-				69C4F2B41F00607600B76FCB /* bluetooth-demo */,
-				69C4F2C81F00607600B76FCB /* bluetooth-demo WatchKit App */,
-				69C4F2D71F00607600B76FCB /* bluetooth-demo WatchKit Extension */,
-				697E85741F00682E003B925C /* bluetooth-mac-demo */,
+				69F54F211F0111930005F8F5 /* Common */,
+				69C4F2B41F00607600B76FCB /* iOS */,
+				69C4F2D71F00607600B76FCB /* watchOS */,
+				5110544120B13FC900F59678 /* iOS-Peripheral */,
+				697E85741F00682E003B925C /* macOS-Peripheral */,
 				69C4F2B31F00607600B76FCB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -166,58 +233,77 @@
 				69C4F2C41F00607600B76FCB /* bluetooth-demo WatchKit App.app */,
 				69C4F2D31F00607600B76FCB /* bluetooth-demo WatchKit Extension.appex */,
 				697E85731F00682E003B925C /* bluetooth-mac-demo.app */,
+				5110544020B13FC900F59678 /* Peripheral.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		69C4F2B41F00607600B76FCB /* bluetooth-demo */ = {
+		69C4F2B41F00607600B76FCB /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				69C4F2B51F00607600B76FCB /* AppDelegate.swift */,
 				69C4F2B71F00607600B76FCB /* ViewController.swift */,
 				69C4F2B91F00607600B76FCB /* Main.storyboard */,
 				69C4F2BC1F00607600B76FCB /* Assets.xcassets */,
-				69C4F2BE1F00607600B76FCB /* LaunchScreen.storyboard */,
 				69C4F2C11F00607600B76FCB /* Info.plist */,
 			);
-			path = "bluetooth-demo";
+			path = iOS;
 			sourceTree = "<group>";
 		};
-		69C4F2C81F00607600B76FCB /* bluetooth-demo WatchKit App */ = {
+		69C4F2C81F00607600B76FCB /* WatchKit App */ = {
 			isa = PBXGroup;
 			children = (
 				69C4F2C91F00607600B76FCB /* Interface.storyboard */,
 				69C4F2CC1F00607600B76FCB /* Assets.xcassets */,
 				69C4F2CE1F00607600B76FCB /* Info.plist */,
 			);
-			path = "bluetooth-demo WatchKit App";
+			path = "WatchKit App";
 			sourceTree = "<group>";
 		};
-		69C4F2D71F00607600B76FCB /* bluetooth-demo WatchKit Extension */ = {
+		69C4F2D71F00607600B76FCB /* watchOS */ = {
 			isa = PBXGroup;
 			children = (
 				69206F491F0061FE0012365B /* ExtensionDelegate.swift */,
 				69C4F2D81F00607600B76FCB /* InterfaceController.swift */,
 				69C4F2DC1F00607600B76FCB /* Assets.xcassets */,
 				69C4F2DE1F00607600B76FCB /* Info.plist */,
+				69C4F2C81F00607600B76FCB /* WatchKit App */,
 			);
-			path = "bluetooth-demo WatchKit Extension";
+			path = watchOS;
 			sourceTree = "<group>";
 		};
-		69F54F211F0111930005F8F5 /* common */ = {
+		69F54F211F0111930005F8F5 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				69206F441F0061FE0012365B /* BirdCentral.swift */,
-				69FD30A31F0A25A300C0991F /* Data+Extension.swift */,
-				69FD30A61F0A25D000C0991F /* UIColor+Extension.swift */,
 				69FD30A91F0A25FE00C0991F /* BirdService.swift */,
+				69206F441F0061FE0012365B /* BirdCentral.swift */,
+				51A5557520B2F161007C7CAB /* Extensions */,
+				51A5557420B2F13E007C7CAB /* CBProtocols */,
+				69C4F2BE1F00607600B76FCB /* LaunchScreen.storyboard */,
 			);
-			name = common;
+			name = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5110543F20B13FC900F59678 /* Peripheral */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5110545120B13FCB00F59678 /* Build configuration list for PBXNativeTarget "Peripheral" */;
+			buildPhases = (
+				5110543C20B13FC900F59678 /* Sources */,
+				5110543D20B13FC900F59678 /* Frameworks */,
+				5110543E20B13FC900F59678 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Peripheral;
+			productName = Peripheral;
+			productReference = 5110544020B13FC900F59678 /* Peripheral.app */;
+			productType = "com.apple.product-type.application";
+		};
 		697E85721F00682E003B925C /* bluetooth-mac-demo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 697E85801F00682E003B925C /* Build configuration list for PBXNativeTarget "bluetooth-mac-demo" */;
@@ -294,10 +380,14 @@
 		69C4F2AA1F00607600B76FCB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Maciej Piotrowski";
 				TargetAttributes = {
+					5110543F20B13FC900F59678 = {
+						CreatedOnToolsVersion = 9.3.1;
+						ProvisioningStyle = Automatic;
+					};
 					697E85721F00682E003B925C = {
 						CreatedOnToolsVersion = 9.0;
 					};
@@ -329,11 +419,22 @@
 				69C4F2C31F00607600B76FCB /* bluetooth-demo WatchKit App */,
 				69C4F2D21F00607600B76FCB /* bluetooth-demo WatchKit Extension */,
 				697E85721F00682E003B925C /* bluetooth-mac-demo */,
+				5110543F20B13FC900F59678 /* Peripheral */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5110543E20B13FC900F59678 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				513F2E9F20B1492200A2DD6C /* LaunchScreen.storyboard in Resources */,
+				513F2EA020B15E4800A2DD6C /* Assets.xcassets in Resources */,
+				5110544820B13FC900F59678 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		697E85711F00682E003B925C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -373,6 +474,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5110543C20B13FC900F59678 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5110544520B13FC900F59678 /* PeripheralViewController.swift in Sources */,
+				5110544320B13FC900F59678 /* AppDelegate.swift in Sources */,
+				5110545220B13FFB00F59678 /* MyPeripheral.swift in Sources */,
+				5110545420B145D900F59678 /* UIColor+Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		697E856F1F00682E003B925C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -380,7 +492,6 @@
 				697E85781F00682E003B925C /* ViewController.swift in Sources */,
 				697E85761F00682E003B925C /* AppDelegate.swift in Sources */,
 				690C995F1F006F8E00864897 /* MyPeripheral.swift in Sources */,
-				69FD30AC1F0A25FE00C0991F /* BirdService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,9 +502,14 @@
 				69C4F2B81F00607600B76FCB /* ViewController.swift in Sources */,
 				69FD30A41F0A25A300C0991F /* Data+Extension.swift in Sources */,
 				69FD30AA1F0A25FE00C0991F /* BirdService.swift in Sources */,
+				5165144420B1BFDB007CF9FC /* CBPeripheralProtocol.swift in Sources */,
 				69C4F2B61F00607600B76FCB /* AppDelegate.swift in Sources */,
+				51A5556F20B2EE68007C7CAB /* CBCharacteristicProtocol.swift in Sources */,
+				5165143F20B1BE5B007CF9FC /* CBCentralManagerProtocol.swift in Sources */,
 				69F54F1E1F010D950005F8F5 /* BirdCentral.swift in Sources */,
+				5165144320B1BFDB007CF9FC /* CBPeripheralManagerProtocol.swift in Sources */,
 				69FD30A71F0A25D000C0991F /* UIColor+Extension.swift in Sources */,
+				51A5557220B2F03D007C7CAB /* CBServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,9 +520,14 @@
 				69206F541F00625A0012365B /* BirdCentral.swift in Sources */,
 				69FD30A51F0A25B800C0991F /* Data+Extension.swift in Sources */,
 				69FD30AB1F0A25FE00C0991F /* BirdService.swift in Sources */,
+				5165144620B1BFEA007CF9FC /* CBPeripheralProtocol.swift in Sources */,
 				69206F511F00625A0012365B /* InterfaceController.swift in Sources */,
+				51A5557020B2EE68007C7CAB /* CBCharacteristicProtocol.swift in Sources */,
 				69206F501F00625A0012365B /* ExtensionDelegate.swift in Sources */,
 				69FD30A81F0A25E200C0991F /* UIColor+Extension.swift in Sources */,
+				5165144520B1BFE6007CF9FC /* CBPeripheralManagerProtocol.swift in Sources */,
+				5165144020B1BE6C007CF9FC /* CBCentralManagerProtocol.swift in Sources */,
+				51A5557320B2F03D007C7CAB /* CBServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +547,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5110544620B13FC900F59678 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5110544720B13FC900F59678 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		69C4F2B91F00607600B76FCB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -453,15 +582,53 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5110544F20B13FCB00F59678 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8JK8W63MXG;
+				INFOPLIST_FILE = "$(SRCROOT)/iOS-Peripheral/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.swifting2.Peripheral;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5110545020B13FCB00F59678 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8JK8W63MXG;
+				INFOPLIST_FILE = "$(SRCROOT)/iOS-Peripheral/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.swifting2.Peripheral;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		697E85811F00682E003B925C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "bluetooth-mac-demo/bluetooth-mac-demo.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "macOS-Peripheral/bluetooth-mac-demo.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 5VHW7X9NK4;
-				INFOPLIST_FILE = "bluetooth-mac-demo/Info.plist";
+				DEVELOPMENT_TEAM = 63UY7K2YNY;
+				INFOPLIST_FILE = "$(SRCROOT)/macOS-Peripheral/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.swifting.bluetooth-mac-demo";
@@ -475,11 +642,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "bluetooth-mac-demo/bluetooth-mac-demo.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "macOS-Peripheral/bluetooth-mac-demo.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 5VHW7X9NK4;
-				INFOPLIST_FILE = "bluetooth-mac-demo/Info.plist";
+				DEVELOPMENT_TEAM = 63UY7K2YNY;
+				INFOPLIST_FILE = "$(SRCROOT)/macOS-Peripheral/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = "io.swifting.bluetooth-mac-demo";
@@ -503,6 +670,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -510,6 +678,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -560,6 +729,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -567,6 +737,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -600,10 +771,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				DEVELOPMENT_TEAM = 5VHW7X9NK4;
-				INFOPLIST_FILE = "bluetooth-demo WatchKit Extension/Info.plist";
+				DEVELOPMENT_TEAM = 8JK8W63MXG;
+				INFOPLIST_FILE = "$(SRCROOT)/watchOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.swifting.bluetooth-demo.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = io.swifting2.bluetooth.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -617,10 +788,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				DEVELOPMENT_TEAM = 5VHW7X9NK4;
-				INFOPLIST_FILE = "bluetooth-demo WatchKit Extension/Info.plist";
+				DEVELOPMENT_TEAM = 8JK8W63MXG;
+				INFOPLIST_FILE = "$(SRCROOT)/watchOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.swifting.bluetooth-demo.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = io.swifting2.bluetooth.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -635,10 +806,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5VHW7X9NK4;
+				DEVELOPMENT_TEAM = 8JK8W63MXG;
 				IBSC_MODULE = bluetooth_demo_WatchKit_Extension;
-				INFOPLIST_FILE = "bluetooth-demo WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.swifting.bluetooth-demo.watchkitapp";
+				INFOPLIST_FILE = "$(SRCROOT)/watchOS/WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = io.swifting2.bluetooth.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -653,10 +824,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5VHW7X9NK4;
+				DEVELOPMENT_TEAM = 8JK8W63MXG;
 				IBSC_MODULE = bluetooth_demo_WatchKit_Extension;
-				INFOPLIST_FILE = "bluetooth-demo WatchKit App/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.swifting.bluetooth-demo.watchkitapp";
+				INFOPLIST_FILE = "$(SRCROOT)/watchOS/WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = io.swifting2.bluetooth.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -670,10 +841,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5VHW7X9NK4;
-				INFOPLIST_FILE = "bluetooth-demo/Info.plist";
+				DEVELOPMENT_TEAM = 8JK8W63MXG;
+				INFOPLIST_FILE = "$(SRCROOT)/iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.swifting.bluetooth-demo";
+				PRODUCT_BUNDLE_IDENTIFIER = io.swifting2.bluetooth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -684,10 +855,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 5VHW7X9NK4;
-				INFOPLIST_FILE = "bluetooth-demo/Info.plist";
+				DEVELOPMENT_TEAM = 8JK8W63MXG;
+				INFOPLIST_FILE = "$(SRCROOT)/iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.swifting.bluetooth-demo";
+				PRODUCT_BUNDLE_IDENTIFIER = io.swifting2.bluetooth;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -697,6 +868,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5110545120B13FCB00F59678 /* Build configuration list for PBXNativeTarget "Peripheral" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5110544F20B13FCB00F59678 /* Debug */,
+				5110545020B13FCB00F59678 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		697E85801F00682E003B925C /* Build configuration list for PBXNativeTarget "bluetooth-mac-demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

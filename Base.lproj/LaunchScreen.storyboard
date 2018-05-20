@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,18 +31,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bird" translatesAutoresizingMaskIntoConstraints="NO" id="Ss4-lY-aca">
-                                <rect key="frame" x="16" y="149" width="343" height="317"/>
+                                <rect key="frame" x="16" y="183.5" width="343" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="3pI-HO-qZu"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Ss4-lY-aca" firstAttribute="top" secondItem="UYj-hC-DSt" secondAttribute="bottom" constant="62" id="53r-8e-fxB"/>
+                            <constraint firstItem="Ss4-lY-aca" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="4pF-Qy-8YJ"/>
                             <constraint firstItem="Ss4-lY-aca" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" id="Kom-I5-wcY"/>
                             <constraint firstItem="UYj-hC-DSt" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" symbolic="YES" id="Mz7-yN-adJ"/>
+                            <constraint firstItem="Ss4-lY-aca" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="OSB-G5-OcT"/>
                             <constraint firstItem="UYj-hC-DSt" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-10" id="VlX-Bo-tOa"/>
                             <constraint firstItem="Ss4-lY-aca" firstAttribute="trailing" secondItem="Ze5-6b-2t3" secondAttribute="trailingMargin" id="aBx-Zo-cG5"/>
                             <constraint firstItem="UYj-hC-DSt" firstAttribute="centerX" secondItem="Ss4-lY-aca" secondAttribute="centerX" id="jSL-wq-TfU"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Ss4-lY-aca" secondAttribute="bottom" constant="201" id="p3H-WD-RX2"/>
                         </constraints>
                     </view>
                 </viewController>

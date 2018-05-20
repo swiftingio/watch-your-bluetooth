@@ -6,11 +6,18 @@ class ViewController: UIViewController {
     @IBOutlet var connection: UILabel!
     @IBOutlet var image: UIImageView!
     
-    let central: BirdCentral = BirdCentral()
+    let central: BirdCentral = BirdCentral.create()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         central.delegate = self
+        udpateValues(from: central)
+    }
+    
+    func udpateValues(from central: BirdCentral) {
+        image.tintColor = central.color
+        image.alpha = central.alpha
+        name.text = central.name
     }
 }
 
@@ -23,6 +30,7 @@ extension ViewController: BirdCentralDelegate {
             connection.text = "connected"
         case .disconnectPeripheral:
             connection.text = "disconnected"
+            udpateValues(from: central)
         }
     }
     

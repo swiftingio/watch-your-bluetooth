@@ -25,6 +25,10 @@ class ViewController: NSViewController {
         let value = colors[sender.indexOfSelectedItem]
         peripheral.setColor(value)
     }
+    
+    @IBAction func startAdveritisng(_ sender: NSButton) {
+        peripheral.startAdvertising()
+    }
 }
 
 extension ViewController: NSTextFieldDelegate {

@@ -1,18 +1,36 @@
 import WatchKit
 import Foundation
 
-
 class InterfaceController: WKInterfaceController {
 
     @IBOutlet var name: WKInterfaceLabel!
     @IBOutlet var label: WKInterfaceLabel!
     @IBOutlet var image: WKInterfaceImage!
     
-    let central: BirdCentral = BirdCentral()
+    let central: BirdCentral = BirdCentral.create()
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         central.delegate = self
+    }
+    
+    override func willActivate() {
+        if (central.isConnected) {
+            label.setText("connected")
+        } else {
+            label.setText("disconnected")
+            central.scanServices()
+        }
+    }
+    
+    override func didAppear() {
+        central.readValues()
+    }
+    
+    func udpateValues(from central: BirdCentral) {
+        image.setTintColor(central.color)
+        image.setAlpha(central.alpha)
+        name.setText(central.name)
     }
     
 }
@@ -26,6 +44,7 @@ extension InterfaceController: BirdCentralDelegate {
             label.setText("connected")
         case .disconnectPeripheral:
             label.setText("disconnected")
+            udpateValues(from: central)
         }
     }
     

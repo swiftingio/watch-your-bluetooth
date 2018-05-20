@@ -17,6 +17,7 @@ class MyPeripheral: NSObject {
         self.services = services
         super.init()
         self.manager.delegate = self
+
     }
     
     private var color: String = "FF0000" {
@@ -61,7 +62,7 @@ class MyPeripheral: NSObject {
         let UUIDs: [CBUUID] = services.map { $0.uuid }
         let advData: [String: Any] = [CBAdvertisementDataServiceUUIDsKey: UUIDs,
                                       CBAdvertisementDataLocalNameKey: peripheralName,
-                                      CBAdvertisementDataIsConnectable: NSNumber(value: true)]
+        ]
         manager.startAdvertising(advData)
     }
     
@@ -102,11 +103,18 @@ class MyPeripheral: NSObject {
 
 // MARK: - CBPeripheralManagerDelegate
 extension MyPeripheral: CBPeripheralManagerDelegate {
+    func peripheralManager(_ peripheral: CBPeripheralManager, didAdd service: CBService, error: Error?) {
+        guard error == nil else { return }
+        print("Service added", service.debugDescription)
+    }
     public func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
         let state = peripheral.state
+        print(">>>>> State: ", peripheral.state.rawValue)
+
         guard state == .poweredOn,
             !servicesAdded
             else { return }
+
         services.forEach { manager.add($0) }
         servicesAdded = true
     }

@@ -10,26 +10,39 @@ protocol BirdCentralDelegate: class {
 class BirdCentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     weak var delegate: BirdCentralDelegate?
+    fileprivate let centralManager: CBCentralManagerProtocol
     
-    let central: CBCentralManager
-    
-    override init() {
-        //TODO: queue + manager
-        let queue = DispatchQueue(label: "io.swifting.bluetooth")
-        central = CBCentralManager(delegate: nil, queue: queue)
-        
-        super.init()
-        
-        //TODO: delegate
-        central.delegate = self
-        
-        //TODO: scan
-        scanServices()
+    var name: String {
+        return nameCharacteristic?.value?.string ?? "Bird"
     }
     
+    var alpha: CGFloat {
+        let string = alphaCharacteristic?.value?.string ?? ""
+        guard let int = Int(string)
+            else { return 0 }
+        return CGFloat(int) / 100
+    }
+    
+    var color: UIColor {
+        let string = colorCharacteristic?.value?.string ?? ""
+        return UIColor(hex: string) ?? .black
+    }
+    
+    var isConnected: Bool {
+        return peripheral?.state ?? .disconnected == .connected
+    }
+    
+    init(centralManager: CBCentralManagerProtocol) {
+        self.centralManager = centralManager
+        super.init()
+        centralManager.delegate = self
+    }
+    
+    //TODO: scan
+
     func scanServices() {
-        guard central.state == .poweredOn else { return }
-        central.scanForPeripherals(withServices: [BirdService.uuid], options: nil)
+        guard centralManager.state == .poweredOn else { return }
+        centralManager.scanForPeripherals(withServices: [BirdService.uuid], options: nil)
     }
     
     //TODO: state updated
@@ -40,7 +53,8 @@ class BirdCentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     //TODO: peripheral found + stop + store + delegate + connect
     
-    var peripheral: CBPeripheral?
+    fileprivate  var peripheral: CBPeripheralProtocol?
+   
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         central.stopScan()
@@ -74,12 +88,23 @@ class BirdCentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     //TODO: disconnected + un-store + scan + Main - Action.disconnectPeripheral(Bool)
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
-        print(error.debugDescription)
-        self.peripheral = nil
-        scanServices()
+        guard let error = error else { return }
+        print("DISCONNECTED ", peripheral, error)
+        reset()
         DispatchQueue.main.async {
             self.delegate?.central(self, didPerformAction: BirdCentral.Action.disconnectPeripheral)
         }
+        scanServices()
+    }
+    
+    var birdService: CBServiceProtocol?
+    
+    func reset() {
+        peripheral = nil
+        birdService = nil
+        nameCharacteristic = nil
+        alphaCharacteristic = nil
+        colorCharacteristic = nil
     }
     
     //TODO: services discovererd + discover characteristics
@@ -92,26 +117,32 @@ class BirdCentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     //TODO: characteristics discovererd + read + subscribe + store
     
-    var name: CBCharacteristic?
-    var color: CBCharacteristic?
-    var alpha: CBCharacteristic?
+    fileprivate var nameCharacteristic: CBCharacteristicProtocol?
+    fileprivate var colorCharacteristic: CBCharacteristicProtocol?
+    fileprivate var alphaCharacteristic: CBCharacteristicProtocol?
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         guard error == nil else { return }
-        
+        birdService = service
         service.characteristics?.forEach {
             peripheral.readValue(for: $0)
             peripheral.setNotifyValue(true, for: $0)
             switch $0.uuid {
             case BirdService.nameCharacteristicUUID:
-                name = $0
+                nameCharacteristic = $0
             case BirdService.alphaCharacteristicUUID:
-                alpha = $0
+                alphaCharacteristic = $0
             case BirdService.colorCharacteristicUUID:
-                color = $0
+                colorCharacteristic = $0
             default:
                 return
             }
+        }
+    }
+    
+    func readValues() {
+        birdService?.characteristics?.forEach {
+            peripheral?.readValue(for: $0)
         }
     }
     
@@ -119,18 +150,15 @@ class BirdCentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         guard error == nil else { return }
-        guard let string = characteristic.value?.string else { return }
         
         let response: Value
         
         switch characteristic.uuid {
         case BirdService.nameCharacteristicUUID:
-            response = .name(string)
+            response = .name(name)
         case BirdService.alphaCharacteristicUUID:
-            guard let int = Int(string) else { return }
-            response = .alpha(CGFloat(int) / 100)
+            response = .alpha(alpha)
         case BirdService.colorCharacteristicUUID:
-            guard let color = UIColor(hex: string) else { return }
             response = .color(color)
         default:
             return
@@ -139,7 +167,6 @@ class BirdCentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
             self.delegate?.central(self, didPerformAction: .read(response))
         }
     }
-    
 }
 
 extension BirdCentral {
@@ -156,4 +183,14 @@ extension BirdCentral {
         case color(UIColor)
     }
     
+}
+
+extension BirdCentral {
+    class func create() -> BirdCentral {
+        //TODO: queue and centralManager
+        let queue = DispatchQueue(label: "io.swifting.bluetooth")
+        let centralManager = CBCentralManager(delegate: nil, queue: queue)
+        let central = BirdCentral(centralManager: centralManager)
+        return central
+    }
 }
