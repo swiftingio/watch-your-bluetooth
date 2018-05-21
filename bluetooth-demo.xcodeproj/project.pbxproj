@@ -30,6 +30,9 @@
 		51A5557B20B300D3007C7CAB /* CBPeripheralDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5557920B300D3007C7CAB /* CBPeripheralDelegateProtocol.swift */; };
 		51A5557D20B30268007C7CAB /* CBAttributeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5557C20B30268007C7CAB /* CBAttributeProtocol.swift */; };
 		51A5557E20B30268007C7CAB /* CBAttributeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5557C20B30268007C7CAB /* CBAttributeProtocol.swift */; };
+		51A5558720B303F8007C7CAB /* BirdCentralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5558620B303F8007C7CAB /* BirdCentralTests.swift */; };
+		51A5558E20B3049C007C7CAB /* BirdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD30A91F0A25FE00C0991F /* BirdService.swift */; };
+		51A5559020B306B7007C7CAB /* CBCentralManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5558F20B306B7007C7CAB /* CBCentralManagerSpy.swift */; };
 		690C995F1F006F8E00864897 /* MyPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C995E1F006F8E00864897 /* MyPeripheral.swift */; };
 		69206F501F00625A0012365B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69206F491F0061FE0012365B /* ExtensionDelegate.swift */; };
 		69206F511F00625A0012365B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4F2D81F00607600B76FCB /* InterfaceController.swift */; };
@@ -58,6 +61,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		51A5558920B303F8007C7CAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69C4F2AA1F00607600B76FCB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 69C4F2B11F00607600B76FCB;
+			remoteInfo = "bluetooth-demo";
+		};
 		69C4F2C61F00607600B76FCB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 69C4F2AA1F00607600B76FCB /* Project object */;
@@ -114,6 +124,10 @@
 		51A5557620B300AB007C7CAB /* CBCentralManagerDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCentralManagerDelegateProtocol.swift; sourceTree = "<group>"; };
 		51A5557920B300D3007C7CAB /* CBPeripheralDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBPeripheralDelegateProtocol.swift; sourceTree = "<group>"; };
 		51A5557C20B30268007C7CAB /* CBAttributeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBAttributeProtocol.swift; sourceTree = "<group>"; };
+		51A5558420B303F8007C7CAB /* BirdCentral-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "BirdCentral-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51A5558620B303F8007C7CAB /* BirdCentralTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdCentralTests.swift; sourceTree = "<group>"; };
+		51A5558820B303F8007C7CAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51A5558F20B306B7007C7CAB /* CBCentralManagerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCentralManagerSpy.swift; sourceTree = "<group>"; };
 		690C995E1F006F8E00864897 /* MyPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPeripheral.swift; sourceTree = "<group>"; };
 		690C99621F00868000864897 /* bluetooth-mac-demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "bluetooth-mac-demo.entitlements"; sourceTree = "<group>"; };
 		69206F441F0061FE0012365B /* BirdCentral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdCentral.swift; sourceTree = "<group>"; };
@@ -146,6 +160,13 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		5110543D20B13FC900F59678 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51A5558120B303F8007C7CAB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -212,6 +233,16 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		51A5558520B303F8007C7CAB /* BirdCentral-Tests */ = {
+			isa = PBXGroup;
+			children = (
+				51A5558620B303F8007C7CAB /* BirdCentralTests.swift */,
+				51A5558F20B306B7007C7CAB /* CBCentralManagerSpy.swift */,
+				51A5558820B303F8007C7CAB /* Info.plist */,
+			);
+			path = "BirdCentral-Tests";
+			sourceTree = "<group>";
+		};
 		697E85741F00682E003B925C /* macOS-Peripheral */ = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +265,7 @@
 				69C4F2D71F00607600B76FCB /* watchOS */,
 				5110544120B13FC900F59678 /* iOS-Peripheral */,
 				697E85741F00682E003B925C /* macOS-Peripheral */,
+				51A5558520B303F8007C7CAB /* BirdCentral-Tests */,
 				69C4F2B31F00607600B76FCB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -246,6 +278,7 @@
 				69C4F2D31F00607600B76FCB /* bluetooth-demo WatchKit Extension.appex */,
 				697E85731F00682E003B925C /* bluetooth-mac-demo.app */,
 				5110544020B13FC900F59678 /* Peripheral.app */,
+				51A5558420B303F8007C7CAB /* BirdCentral-Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,6 +348,24 @@
 			productName = Peripheral;
 			productReference = 5110544020B13FC900F59678 /* Peripheral.app */;
 			productType = "com.apple.product-type.application";
+		};
+		51A5558320B303F8007C7CAB /* BirdCentral-Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51A5558B20B303F8007C7CAB /* Build configuration list for PBXNativeTarget "BirdCentral-Tests" */;
+			buildPhases = (
+				51A5558020B303F8007C7CAB /* Sources */,
+				51A5558120B303F8007C7CAB /* Frameworks */,
+				51A5558220B303F8007C7CAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				51A5558A20B303F8007C7CAB /* PBXTargetDependency */,
+			);
+			name = "BirdCentral-Tests";
+			productName = "BirdCentral-Tests";
+			productReference = 51A5558420B303F8007C7CAB /* BirdCentral-Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		697E85721F00682E003B925C /* bluetooth-mac-demo */ = {
 			isa = PBXNativeTarget;
@@ -400,6 +451,11 @@
 						CreatedOnToolsVersion = 9.3.1;
 						ProvisioningStyle = Automatic;
 					};
+					51A5558320B303F8007C7CAB = {
+						CreatedOnToolsVersion = 9.3.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 69C4F2B11F00607600B76FCB;
+					};
 					697E85721F00682E003B925C = {
 						CreatedOnToolsVersion = 9.0;
 					};
@@ -432,6 +488,7 @@
 				69C4F2D21F00607600B76FCB /* bluetooth-demo WatchKit Extension */,
 				697E85721F00682E003B925C /* bluetooth-mac-demo */,
 				5110543F20B13FC900F59678 /* Peripheral */,
+				51A5558320B303F8007C7CAB /* BirdCentral-Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -444,6 +501,13 @@
 				513F2E9F20B1492200A2DD6C /* LaunchScreen.storyboard in Resources */,
 				513F2EA020B15E4800A2DD6C /* Assets.xcassets in Resources */,
 				5110544820B13FC900F59678 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51A5558220B303F8007C7CAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,12 +561,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		51A5558020B303F8007C7CAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51A5558720B303F8007C7CAB /* BirdCentralTests.swift in Sources */,
+				51A5559020B306B7007C7CAB /* CBCentralManagerSpy.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		697E856F1F00682E003B925C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				697E85781F00682E003B925C /* ViewController.swift in Sources */,
 				697E85761F00682E003B925C /* AppDelegate.swift in Sources */,
+				51A5558E20B3049C007C7CAB /* BirdService.swift in Sources */,
 				690C995F1F006F8E00864897 /* MyPeripheral.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -552,6 +626,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		51A5558A20B303F8007C7CAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 69C4F2B11F00607600B76FCB /* bluetooth-demo */;
+			targetProxy = 51A5558920B303F8007C7CAB /* PBXContainerItemProxy */;
+		};
 		69C4F2C71F00607600B76FCB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 69C4F2C31F00607600B76FCB /* bluetooth-demo WatchKit App */;
@@ -635,6 +714,42 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		51A5558C20B303F8007C7CAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8JK8W63MXG;
+				INFOPLIST_FILE = "BirdCentral-Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.swifting2.BirdCentral-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bluetooth-demo.app/bluetooth-demo";
+			};
+			name = Debug;
+		};
+		51A5558D20B303F8007C7CAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8JK8W63MXG;
+				INFOPLIST_FILE = "BirdCentral-Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.swifting2.BirdCentral-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bluetooth-demo.app/bluetooth-demo";
 			};
 			name = Release;
 		};
@@ -891,6 +1006,15 @@
 			buildConfigurations = (
 				5110544F20B13FCB00F59678 /* Debug */,
 				5110545020B13FCB00F59678 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51A5558B20B303F8007C7CAB /* Build configuration list for PBXNativeTarget "BirdCentral-Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51A5558C20B303F8007C7CAB /* Debug */,
+				51A5558D20B303F8007C7CAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
