@@ -1,6 +1,6 @@
 import CoreBluetooth
 
-protocol CBCharacteristicProtocol {
+protocol CBCharacteristicProtocol: CBAttributeProtocol {
     var service: CBService { get }
     var properties: CBCharacteristicProperties { get }
     var value: Data? { get }

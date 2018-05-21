@@ -2,15 +2,12 @@ import CoreBluetooth
 import UIKit
 
 protocol BirdCentralDelegate: class {
-    
     func central(_ central: BirdCentral, didPerformAction: BirdCentral.Action)
-    
 }
 
-class BirdCentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
+class BirdCentral: NSObject {
     
     weak var delegate: BirdCentralDelegate?
-    fileprivate let centralManager: CBCentralManagerProtocol
     
     var name: String {
         return nameCharacteristic?.value?.string ?? "Bird"
@@ -32,41 +29,125 @@ class BirdCentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         return peripheral?.state ?? .disconnected == .connected
     }
     
+    let centralManager: CBCentralManagerProtocol
+    
     init(centralManager: CBCentralManagerProtocol) {
         self.centralManager = centralManager
         super.init()
         centralManager.delegate = self
     }
     
-    //TODO: scan
+    var peripheral: CBPeripheralProtocol?
+    var birdService: CBServiceProtocol?
+    var nameCharacteristic: CBCharacteristicProtocol?
+    var colorCharacteristic: CBCharacteristicProtocol?
+    var alphaCharacteristic: CBCharacteristicProtocol?
+    
+}
 
+extension BirdCentral {
+    
+    //TODO: scan
+    
     func scanServices() {
         guard centralManager.state == .poweredOn else { return }
         centralManager.scanForPeripherals(withServices: [BirdService.uuid], options: nil)
     }
     
-    //TODO: state updated
+    //TODO: read values
+    
+    func readValues() {
+        birdService?.characteristics?.forEach {
+            peripheral?.readValue(for: $0)
+        }
+    }
+    
+}
+
+extension BirdCentral: CBCentralManagerDelegate {
     
     func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        let delegate = (self as CBCentralManagerDelegateProtocol)
+        delegate.centralManagerDidUpdateState(central)
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        let delegate = (self as CBCentralManagerDelegateProtocol)
+        delegate.centralManager(central, didDiscover: peripheral, advertisementData: advertisementData, rssi: RSSI)
+    }
+    
+    func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
+        let delegate = (self as CBCentralManagerDelegateProtocol)
+        delegate.centralManager(central, didFailToConnect: peripheral, error: error)
+    }
+    
+    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+        let delegate = (self as CBCentralManagerDelegateProtocol)
+        delegate.centralManager(central, didConnect: peripheral)
+    }
+    
+    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        let delegate = (self as CBCentralManagerDelegateProtocol)
+        delegate.centralManager(central, didDisconnectPeripheral: peripheral, error: error)
+    }
+    
+}
+
+extension BirdCentral: CBPeripheralDelegate {
+    
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+        let delegate = (self as CBPeripheralDelegateProtocol)
+        delegate.peripheral(peripheral, didDiscoverServices: error)
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+        let delegate = (self as CBPeripheralDelegateProtocol)
+        delegate.peripheral(peripheral, didDiscoverCharacteristicsFor: service, error: error)
+    }
+    
+    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+        let delegate = (self as CBPeripheralDelegateProtocol)
+        delegate.peripheral(peripheral, didUpdateValueFor: characteristic, error: error)
+    }
+    
+}
+
+extension BirdCentral {
+    
+    enum Action {
+        case connectPeripheral(Bool)
+        case disconnectPeripheral
+        case read(Value)
+    }
+    
+    enum Value {
+        case name(String)
+        case alpha(CGFloat)
+        case color(UIColor)
+    }
+    
+}
+
+extension BirdCentral: CBCentralManagerDelegateProtocol {
+    
+    //TODO: state updated
+    
+    func centralManagerDidUpdateState(_ central: CBCentralManagerProtocol) {
         scanServices()
     }
     
     //TODO: peripheral found + stop + store + delegate + connect
     
-    fileprivate  var peripheral: CBPeripheralProtocol?
-   
-    
-    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+    func centralManager(_ central: CBCentralManagerProtocol, didDiscover peripheral: CBPeripheralProtocol, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         central.stopScan()
         self.peripheral = peripheral
         peripheral.delegate = self
         central.connect(peripheral, options: nil)
     }
     
-    
     //TODO: failed + un-store + scan + Main - Action.connectPeripheral(true)
     
-    func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
+    func centralManager(_ central: CBCentralManagerProtocol, didFailToConnect peripheral: CBPeripheralProtocol, error: Error?) {
         print(error.debugDescription)
         self.peripheral = nil
         scanServices()
@@ -77,7 +158,7 @@ class BirdCentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     //TODO: connected: discover services + Main - Action.connectPeripheral(false)
     
-    func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral) {
+    func centralManager(_ central: CBCentralManagerProtocol, didConnect peripheral: CBPeripheralProtocol) {
         peripheral.delegate = self
         peripheral.discoverServices([BirdService.uuid])
         DispatchQueue.main.async {
@@ -87,7 +168,8 @@ class BirdCentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     //TODO: disconnected + un-store + scan + Main - Action.disconnectPeripheral(Bool)
     
-    func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+    func centralManager(_ central: CBCentralManagerProtocol, didDisconnectPeripheral peripheral: CBPeripheralProtocol, error: Error?) {
+        
         guard let error = error else { return }
         print("DISCONNECTED ", peripheral, error)
         reset()
@@ -97,9 +179,9 @@ class BirdCentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         scanServices()
     }
     
-    var birdService: CBServiceProtocol?
+    //TODO: reset
     
-    func reset() {
+    private func reset() {
         peripheral = nil
         birdService = nil
         nameCharacteristic = nil
@@ -107,9 +189,14 @@ class BirdCentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         colorCharacteristic = nil
     }
     
+}
+
+
+extension BirdCentral: CBPeripheralDelegateProtocol {
+    
     //TODO: services discovererd + discover characteristics
     
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
+    func peripheral(_ peripheral: CBPeripheralProtocol, didDiscoverServices error: Error?) {
         guard error == nil else { return }
         guard let service = (peripheral.services?.filter { $0.uuid == BirdService.uuid })?.first else { return }
         peripheral.discoverCharacteristics(BirdService.characteristics, for: service)
@@ -117,11 +204,7 @@ class BirdCentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
     
     //TODO: characteristics discovererd + read + subscribe + store
     
-    fileprivate var nameCharacteristic: CBCharacteristicProtocol?
-    fileprivate var colorCharacteristic: CBCharacteristicProtocol?
-    fileprivate var alphaCharacteristic: CBCharacteristicProtocol?
-    
-    func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
+    func peripheral(_ peripheral: CBPeripheralProtocol, didDiscoverCharacteristicsFor service: CBServiceProtocol, error: Error?) {
         guard error == nil else { return }
         birdService = service
         service.characteristics?.forEach {
@@ -140,15 +223,9 @@ class BirdCentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
         }
     }
     
-    func readValues() {
-        birdService?.characteristics?.forEach {
-            peripheral?.readValue(for: $0)
-        }
-    }
-    
     //TODO: value updated + Main - Action.read(Value)
     
-    func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
+    func peripheral(_ peripheral: CBPeripheralProtocol, didUpdateValueFor characteristic: CBCharacteristicProtocol, error: Error?) {
         guard error == nil else { return }
         
         let response: Value
@@ -171,26 +248,13 @@ class BirdCentral: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
 
 extension BirdCentral {
     
-    enum Action {
-        case connectPeripheral(Bool)
-        case disconnectPeripheral
-        case read(Value)
-    }
-    
-    enum Value {
-        case name(String)
-        case alpha(CGFloat)
-        case color(UIColor)
-    }
-    
-}
+    //TODO: return a `BirdCentral` with queue and centralManager
 
-extension BirdCentral {
     class func create() -> BirdCentral {
-        //TODO: queue and centralManager
         let queue = DispatchQueue(label: "io.swifting.bluetooth")
         let centralManager = CBCentralManager(delegate: nil, queue: queue)
         let central = BirdCentral(centralManager: centralManager)
         return central
     }
+    
 }

@@ -24,6 +24,12 @@
 		51A5557020B2EE68007C7CAB /* CBCharacteristicProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5556E20B2EE68007C7CAB /* CBCharacteristicProtocol.swift */; };
 		51A5557220B2F03D007C7CAB /* CBServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5557120B2F03D007C7CAB /* CBServiceProtocol.swift */; };
 		51A5557320B2F03D007C7CAB /* CBServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5557120B2F03D007C7CAB /* CBServiceProtocol.swift */; };
+		51A5557720B300AB007C7CAB /* CBCentralManagerDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5557620B300AB007C7CAB /* CBCentralManagerDelegateProtocol.swift */; };
+		51A5557820B300AB007C7CAB /* CBCentralManagerDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5557620B300AB007C7CAB /* CBCentralManagerDelegateProtocol.swift */; };
+		51A5557A20B300D3007C7CAB /* CBPeripheralDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5557920B300D3007C7CAB /* CBPeripheralDelegateProtocol.swift */; };
+		51A5557B20B300D3007C7CAB /* CBPeripheralDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5557920B300D3007C7CAB /* CBPeripheralDelegateProtocol.swift */; };
+		51A5557D20B30268007C7CAB /* CBAttributeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5557C20B30268007C7CAB /* CBAttributeProtocol.swift */; };
+		51A5557E20B30268007C7CAB /* CBAttributeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5557C20B30268007C7CAB /* CBAttributeProtocol.swift */; };
 		690C995F1F006F8E00864897 /* MyPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C995E1F006F8E00864897 /* MyPeripheral.swift */; };
 		69206F501F00625A0012365B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69206F491F0061FE0012365B /* ExtensionDelegate.swift */; };
 		69206F511F00625A0012365B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4F2D81F00607600B76FCB /* InterfaceController.swift */; };
@@ -105,6 +111,9 @@
 		5165144220B1BFDB007CF9FC /* CBPeripheralProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CBPeripheralProtocol.swift; sourceTree = "<group>"; };
 		51A5556E20B2EE68007C7CAB /* CBCharacteristicProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCharacteristicProtocol.swift; sourceTree = "<group>"; };
 		51A5557120B2F03D007C7CAB /* CBServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBServiceProtocol.swift; sourceTree = "<group>"; };
+		51A5557620B300AB007C7CAB /* CBCentralManagerDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCentralManagerDelegateProtocol.swift; sourceTree = "<group>"; };
+		51A5557920B300D3007C7CAB /* CBPeripheralDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBPeripheralDelegateProtocol.swift; sourceTree = "<group>"; };
+		51A5557C20B30268007C7CAB /* CBAttributeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBAttributeProtocol.swift; sourceTree = "<group>"; };
 		690C995E1F006F8E00864897 /* MyPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPeripheral.swift; sourceTree = "<group>"; };
 		690C99621F00868000864897 /* bluetooth-mac-demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "bluetooth-mac-demo.entitlements"; sourceTree = "<group>"; };
 		69206F441F0061FE0012365B /* BirdCentral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdCentral.swift; sourceTree = "<group>"; };
@@ -183,8 +192,11 @@
 			isa = PBXGroup;
 			children = (
 				5165143E20B1BE5B007CF9FC /* CBCentralManagerProtocol.swift */,
+				51A5557620B300AB007C7CAB /* CBCentralManagerDelegateProtocol.swift */,
 				5165144120B1BFDB007CF9FC /* CBPeripheralManagerProtocol.swift */,
 				5165144220B1BFDB007CF9FC /* CBPeripheralProtocol.swift */,
+				51A5557920B300D3007C7CAB /* CBPeripheralDelegateProtocol.swift */,
+				51A5557C20B30268007C7CAB /* CBAttributeProtocol.swift */,
 				51A5556E20B2EE68007C7CAB /* CBCharacteristicProtocol.swift */,
 				51A5557120B2F03D007C7CAB /* CBServiceProtocol.swift */,
 			);
@@ -504,11 +516,14 @@
 				69FD30AA1F0A25FE00C0991F /* BirdService.swift in Sources */,
 				5165144420B1BFDB007CF9FC /* CBPeripheralProtocol.swift in Sources */,
 				69C4F2B61F00607600B76FCB /* AppDelegate.swift in Sources */,
+				51A5557D20B30268007C7CAB /* CBAttributeProtocol.swift in Sources */,
 				51A5556F20B2EE68007C7CAB /* CBCharacteristicProtocol.swift in Sources */,
 				5165143F20B1BE5B007CF9FC /* CBCentralManagerProtocol.swift in Sources */,
+				51A5557720B300AB007C7CAB /* CBCentralManagerDelegateProtocol.swift in Sources */,
 				69F54F1E1F010D950005F8F5 /* BirdCentral.swift in Sources */,
 				5165144320B1BFDB007CF9FC /* CBPeripheralManagerProtocol.swift in Sources */,
 				69FD30A71F0A25D000C0991F /* UIColor+Extension.swift in Sources */,
+				51A5557A20B300D3007C7CAB /* CBPeripheralDelegateProtocol.swift in Sources */,
 				51A5557220B2F03D007C7CAB /* CBServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,11 +537,14 @@
 				69FD30AB1F0A25FE00C0991F /* BirdService.swift in Sources */,
 				5165144620B1BFEA007CF9FC /* CBPeripheralProtocol.swift in Sources */,
 				69206F511F00625A0012365B /* InterfaceController.swift in Sources */,
+				51A5557E20B30268007C7CAB /* CBAttributeProtocol.swift in Sources */,
 				51A5557020B2EE68007C7CAB /* CBCharacteristicProtocol.swift in Sources */,
 				69206F501F00625A0012365B /* ExtensionDelegate.swift in Sources */,
+				51A5557820B300AB007C7CAB /* CBCentralManagerDelegateProtocol.swift in Sources */,
 				69FD30A81F0A25E200C0991F /* UIColor+Extension.swift in Sources */,
 				5165144520B1BFE6007CF9FC /* CBPeripheralManagerProtocol.swift in Sources */,
 				5165144020B1BE6C007CF9FC /* CBCentralManagerProtocol.swift in Sources */,
+				51A5557B20B300D3007C7CAB /* CBPeripheralDelegateProtocol.swift in Sources */,
 				51A5557320B2F03D007C7CAB /* CBServiceProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

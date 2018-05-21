@@ -8,6 +8,7 @@ public protocol CBCentralManagerProtocol: class {
     func retrieveConnectedPeripherals(withServices serviceUUIDs: [CBUUID]) -> [CBPeripheral]
     func scanForPeripherals(withServices serviceUUIDs: [CBUUID]?, options: [String : Any]?)
     func connect(_ peripheral: CBPeripheral, options: [String : Any]?)
+    func connect(_ peripheral: CBPeripheralProtocol, options: [String: Any]?)
     func cancelPeripheralConnection(_ peripheral: CBPeripheral)
 }
 

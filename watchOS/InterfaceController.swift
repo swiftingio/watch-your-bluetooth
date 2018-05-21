@@ -2,7 +2,7 @@ import WatchKit
 import Foundation
 
 class InterfaceController: WKInterfaceController {
-
+    
     @IBOutlet var name: WKInterfaceLabel!
     @IBOutlet var label: WKInterfaceLabel!
     @IBOutlet var image: WKInterfaceImage!
@@ -17,14 +17,11 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         if (central.isConnected) {
             label.setText("connected")
+            central.readValues()
         } else {
             label.setText("disconnected")
             central.scanServices()
         }
-    }
-    
-    override func didAppear() {
-        central.readValues()
     }
     
     func udpateValues(from central: BirdCentral) {

@@ -29,9 +29,5 @@
 	<string>io.swifting2.bluetooth</string>
 	<key>WKWatchKitApp</key>
 	<true/>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>bluetooth-central</string>
-	</array>
 </dict>
 </plist>
