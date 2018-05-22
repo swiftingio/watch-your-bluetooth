@@ -169,9 +169,7 @@ extension BirdCentral: CBCentralManagerDelegateProtocol {
     //TODO: disconnected + un-store + scan + Main - Action.disconnectPeripheral(Bool)
     
     func centralManager(_ central: CBCentralManagerProtocol, didDisconnectPeripheral peripheral: CBPeripheralProtocol, error: Error?) {
-        
-        guard let error = error else { return }
-        print("DISCONNECTED ", peripheral, error)
+        if let error = error { print("DISCONNECTED ", peripheral, error) }
         reset()
         DispatchQueue.main.async {
             self.delegate?.central(self, didPerformAction: BirdCentral.Action.disconnectPeripheral)
