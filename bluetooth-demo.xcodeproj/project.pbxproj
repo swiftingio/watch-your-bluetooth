@@ -33,6 +33,10 @@
 		51A5558720B303F8007C7CAB /* BirdCentralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5558620B303F8007C7CAB /* BirdCentralTests.swift */; };
 		51A5558E20B3049C007C7CAB /* BirdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD30A91F0A25FE00C0991F /* BirdService.swift */; };
 		51A5559020B306B7007C7CAB /* CBCentralManagerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A5558F20B306B7007C7CAB /* CBCentralManagerSpy.swift */; };
+		51BF948820B4372E0024874D /* CBServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BF948720B4372E0024874D /* CBServiceSpy.swift */; };
+		51BF948A20B43A210024874D /* CBCharacteristicSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BF948920B43A210024874D /* CBCharacteristicSpy.swift */; };
+		51BF948C20B43A450024874D /* CBPeripheralSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BF948B20B43A450024874D /* CBPeripheralSpy.swift */; };
+		51BF948E20B43A5A0024874D /* BirdCentralDelegateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51BF948D20B43A5A0024874D /* BirdCentralDelegateSpy.swift */; };
 		690C995F1F006F8E00864897 /* MyPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 690C995E1F006F8E00864897 /* MyPeripheral.swift */; };
 		69206F501F00625A0012365B /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69206F491F0061FE0012365B /* ExtensionDelegate.swift */; };
 		69206F511F00625A0012365B /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69C4F2D81F00607600B76FCB /* InterfaceController.swift */; };
@@ -128,6 +132,10 @@
 		51A5558620B303F8007C7CAB /* BirdCentralTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdCentralTests.swift; sourceTree = "<group>"; };
 		51A5558820B303F8007C7CAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51A5558F20B306B7007C7CAB /* CBCentralManagerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCentralManagerSpy.swift; sourceTree = "<group>"; };
+		51BF948720B4372E0024874D /* CBServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBServiceSpy.swift; sourceTree = "<group>"; };
+		51BF948920B43A210024874D /* CBCharacteristicSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCharacteristicSpy.swift; sourceTree = "<group>"; };
+		51BF948B20B43A450024874D /* CBPeripheralSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBPeripheralSpy.swift; sourceTree = "<group>"; };
+		51BF948D20B43A5A0024874D /* BirdCentralDelegateSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdCentralDelegateSpy.swift; sourceTree = "<group>"; };
 		690C995E1F006F8E00864897 /* MyPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPeripheral.swift; sourceTree = "<group>"; };
 		690C99621F00868000864897 /* bluetooth-mac-demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "bluetooth-mac-demo.entitlements"; sourceTree = "<group>"; };
 		69206F441F0061FE0012365B /* BirdCentral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirdCentral.swift; sourceTree = "<group>"; };
@@ -238,6 +246,10 @@
 			children = (
 				51A5558620B303F8007C7CAB /* BirdCentralTests.swift */,
 				51A5558F20B306B7007C7CAB /* CBCentralManagerSpy.swift */,
+				51BF948720B4372E0024874D /* CBServiceSpy.swift */,
+				51BF948920B43A210024874D /* CBCharacteristicSpy.swift */,
+				51BF948B20B43A450024874D /* CBPeripheralSpy.swift */,
+				51BF948D20B43A5A0024874D /* BirdCentralDelegateSpy.swift */,
 				51A5558820B303F8007C7CAB /* Info.plist */,
 			);
 			path = "BirdCentral-Tests";
@@ -565,7 +577,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51BF948E20B43A5A0024874D /* BirdCentralDelegateSpy.swift in Sources */,
 				51A5558720B303F8007C7CAB /* BirdCentralTests.swift in Sources */,
+				51BF948C20B43A450024874D /* CBPeripheralSpy.swift in Sources */,
+				51BF948820B4372E0024874D /* CBServiceSpy.swift in Sources */,
+				51BF948A20B43A210024874D /* CBCharacteristicSpy.swift in Sources */,
 				51A5559020B306B7007C7CAB /* CBCentralManagerSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

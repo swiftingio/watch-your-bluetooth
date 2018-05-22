@@ -10,7 +10,7 @@ class BirdCentral: NSObject {
     weak var delegate: BirdCentralDelegate?
     
     var name: String {
-        return nameCharacteristic?.value?.string ?? "Bird"
+        return nameCharacteristic?.value?.string ?? "Birdy"
     }
     
     var alpha: CGFloat {
@@ -248,7 +248,7 @@ extension BirdCentral {
     
     //TODO: return a `BirdCentral` with queue and centralManager
 
-    class func create() -> BirdCentral {
+    class func create() -> BirdCentral! {
         let queue = DispatchQueue(label: "io.swifting.bluetooth")
         let centralManager = CBCentralManager(delegate: nil, queue: queue)
         let central = BirdCentral(centralManager: centralManager)
