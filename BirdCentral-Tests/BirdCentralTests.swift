@@ -2,6 +2,26 @@ import XCTest
 import CoreBluetooth
 @testable import bluetooth_demo
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class BirdCentralTests: XCTestCase {
     
     var sut: BirdCentral!
@@ -13,7 +33,27 @@ class BirdCentralTests: XCTestCase {
     var alphaCharacteristic: CBCharacteristicSpy!
     var colorCharacteristic: CBCharacteristicSpy!
     var delegate: BirdCentralDelegateSpy!
+   
     
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     override func setUp() {
         super.setUp()
         centralManager = CBCentralManagerSpy()
@@ -27,6 +67,26 @@ class BirdCentralTests: XCTestCase {
         delegate = BirdCentralDelegateSpy()
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     override func tearDown() {
         centralManager = nil
         sut = nil
@@ -38,14 +98,28 @@ class BirdCentralTests: XCTestCase {
         delegate = nil
         super.tearDown()
     }
+   
     
     
-    //MARK: Starter
     
-    func testEmptyImplementationOfBirdCentral() {
-        XCTAssertTrue(true, "Maciej, show the audience that app doesn't work on watchOS ⌚️ nor on iOS 📱!")
-    }
     
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     //MARK: Central Manager Updates State
     
     func testCentralManagerDidUpdateStateWithPoweredOn() {
@@ -60,6 +134,26 @@ class BirdCentralTests: XCTestCase {
         
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     func testCentralManagerDidUpdateStateWithPoweredOffOrOtherState() {
         //Given:
         centralManager.state = .poweredOff
@@ -71,6 +165,26 @@ class BirdCentralTests: XCTestCase {
         XCTAssertFalse(centralManager.scanForPeripheralsCalled, "Should not scan for peripherals")
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     //MARK: Peripheral Discovery
     
     func testCentralManagerDidDiscoverPeripheral() {
@@ -87,6 +201,26 @@ class BirdCentralTests: XCTestCase {
         XCTAssertTrue(centralManager.connectCBPeripheralProtocolCalled, "Should connect peripheral")
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     //MARK: Connection Failure
     
     func testCentralManagerDidFailToConnect() {
@@ -102,6 +236,26 @@ class BirdCentralTests: XCTestCase {
             }
         }
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
         //When:
         sut.centralManager(centralManager, didFailToConnect: peripheral, error: nil)
         
@@ -111,6 +265,26 @@ class BirdCentralTests: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     //MARK: Peripheral Connected
     
     func testPeripheralConnected() {
@@ -123,6 +297,26 @@ class BirdCentralTests: XCTestCase {
             }
         }
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
         //When:
         sut.centralManager(centralManager, didConnect: peripheral)
         
@@ -132,7 +326,27 @@ class BirdCentralTests: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
         
     }
+   
     
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     //MARK: Peripheral Disconnected
     
     func testPeripheralDisconnected() {
@@ -151,7 +365,27 @@ class BirdCentralTests: XCTestCase {
                 expectation.fulfill()
             }
         }
+       
         
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
         //When:
         sut.centralManager(centralManager, didDisconnectPeripheral:peripheral, error: nil)
         
@@ -165,6 +399,26 @@ class BirdCentralTests: XCTestCase {
         XCTAssertEqual(centralManager.scanForPeripheralsUUIDs, [BirdService.uuid], "Should scan for Bird Service UUID")
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     //MARK: Services Discovery
     
     func testPeripheralDidDiscoverServices() {
@@ -180,6 +434,26 @@ class BirdCentralTests: XCTestCase {
         XCTAssertTrue(peripheral.discoverCharacteristicsArgumentService === service)
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     func testPeripheralDidDiscoverServicesWithError() {
         //Given:
         let service = CBMutableService(type: BirdService.uuid , primary: false)
@@ -194,13 +468,55 @@ class BirdCentralTests: XCTestCase {
         XCTAssertNil(peripheral.discoverCharacteristicsArgumentService)
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     func testPeripheralDidDiscoverCharacteristicsForService() {
         //Given:
         let nameCharacteristic = CBMutableCharacteristic(type: BirdService.nameCharacteristicUUID, properties: [.read, .notify], value: nil, permissions: [.readable])
         let colorCharacteristic = CBMutableCharacteristic(type: BirdService.colorCharacteristicUUID, properties: [.read, .notify], value: nil, permissions: [.readable])
         let alphaCharacteristic = CBMutableCharacteristic(type: BirdService.alphaCharacteristicUUID, properties: [.read, .notify], value: nil, permissions: [.readable])
+        
+        
         birdService.characteristics = [nameCharacteristic, colorCharacteristic, alphaCharacteristic]
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
         //When:
         sut.peripheral(peripheral, didDiscoverCharacteristicsFor:birdService, error: nil)
         
@@ -213,14 +529,56 @@ class BirdCentralTests: XCTestCase {
         XCTAssertEqual(peripheral.setNotifyValueArguments.count, 3, "Should subscribe for value notificaitons for all 3 characteristics")
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     func testPeripheralDidDiscoverCharacteristicsForServiceWithError() {
         //Given:
         let nameCharacteristic = CBMutableCharacteristic(type: BirdService.nameCharacteristicUUID, properties: [.read, .notify], value: nil, permissions: [.readable])
         let colorCharacteristic = CBMutableCharacteristic(type: BirdService.colorCharacteristicUUID, properties: [.read, .notify], value: nil, permissions: [.readable])
         let alphaCharacteristic = CBMutableCharacteristic(type: BirdService.alphaCharacteristicUUID, properties: [.read, .notify], value: nil, permissions: [.readable])
+        
+        
         birdService.characteristics = [nameCharacteristic, colorCharacteristic, alphaCharacteristic]
         let error = NSError(domain: "something went wrong", code: 1, userInfo: nil)
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
         //When:
         sut.peripheral(peripheral, didDiscoverCharacteristicsFor:birdService, error: error)
         
@@ -233,6 +591,26 @@ class BirdCentralTests: XCTestCase {
         XCTAssertEqual(peripheral.setNotifyValueArguments.count, 0, "Should NOT subscribe to any value notificaitons")
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     func testDidUpdateValueForCharacteristicName() {
         //Given:
         let characteristic = CBMutableCharacteristic(type: BirdService.nameCharacteristicUUID, properties: [.read, .notify], value: nil, permissions: [.readable])
@@ -251,6 +629,26 @@ class BirdCentralTests: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     func testDidUpdateValueForCharacteristicAlpha() {
         //Given:
         let characteristic = CBMutableCharacteristic(type: BirdService.alphaCharacteristicUUID, properties: [.read, .notify], value: nil, permissions: [.readable])
@@ -269,6 +667,26 @@ class BirdCentralTests: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     func testDidUpdateValueForCharacteristicColor() {
         //Given:
         let characteristic = CBMutableCharacteristic(type: BirdService.colorCharacteristicUUID, properties: [.read, .notify], value: nil, permissions: [.readable])
@@ -287,6 +705,26 @@ class BirdCentralTests: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     func testDidUpdateValueForCharacteristicWithError() {
         //Given:
         let characteristic = CBMutableCharacteristic(type: BirdService.colorCharacteristicUUID, properties: [.read, .notify], value: nil, permissions: [.readable])
@@ -305,6 +743,26 @@ class BirdCentralTests: XCTestCase {
         wait(for: [expectation], timeout: 0.1)
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     //MARK: Interface Methods
 
     func testNameWithNoCharacteristicValue() {
@@ -319,6 +777,26 @@ class BirdCentralTests: XCTestCase {
         
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     func testAlphaWithNoCharacteristicValue() {
         //Given:
         sut.alphaCharacteristic = nil
@@ -331,6 +809,26 @@ class BirdCentralTests: XCTestCase {
         
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     func testColorWithNoCharacteristicValue() {
         //Given:
         sut.colorCharacteristic = nil
@@ -343,6 +841,26 @@ class BirdCentralTests: XCTestCase {
         
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     func testName() {
         //Given:
         sut.nameCharacteristic = nameCharacteristic
@@ -357,6 +875,26 @@ class BirdCentralTests: XCTestCase {
         
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     func testAlpha() {
         //Given:
         sut.alphaCharacteristic = alphaCharacteristic
@@ -371,6 +909,26 @@ class BirdCentralTests: XCTestCase {
         
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     func testColor() {
         //Given:
         sut.colorCharacteristic = colorCharacteristic
@@ -386,6 +944,26 @@ class BirdCentralTests: XCTestCase {
 
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     func testScanServicesWithBluetoothPoweredOn() {
         //Given:
         centralManager.state = .poweredOn
@@ -397,6 +975,26 @@ class BirdCentralTests: XCTestCase {
         XCTAssertEqual(centralManager.scanForPeripheralsUUIDs, [BirdService.uuid], "Should scan for Bird Service UUID")
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     func testScanServicesWithBluetoothPoweredOffOrOtherState() {
         //Given:
         centralManager.state = .poweredOff
@@ -408,6 +1006,26 @@ class BirdCentralTests: XCTestCase {
         XCTAssertFalse(centralManager.scanForPeripheralsCalled, "Should not scan for peripherals")
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     func testReadValues() {
         //Given:
         sut.birdService = birdService
@@ -420,6 +1038,27 @@ class BirdCentralTests: XCTestCase {
         sut.readValues()
         
         //Then:
-        XCTAssertEqual(peripheral.readValueArguments.count, 2)
+        XCTAssertEqual(peripheral.readValueArguments.count, 2, "Should read values for all characteristics in a service")
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
 }
