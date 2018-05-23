@@ -22,6 +22,7 @@ class InterfaceController: WKInterfaceController {
             label.setText("disconnected")
             central.scanServices()
         }
+        image.setHidden(!central.isConnected)
     }
     
     func udpateValues(from central: BirdCentral) {
