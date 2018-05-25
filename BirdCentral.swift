@@ -213,7 +213,7 @@ extension BirdCentral: CBCentralManagerDelegateProtocol {
     
     
     
-    //TODO: peripheral found: stop + store + delegate + connect
+    //TODO: peripheral found: stop + store + connect
     
     func centralManager(_ central: CBCentralManagerProtocol, didDiscover peripheral: CBPeripheralProtocol, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         
@@ -271,7 +271,7 @@ extension BirdCentral: CBCentralManagerDelegateProtocol {
     
     
     
-    //TODO: connected: discover services + Main -> Action.connectPeripheral
+    //TODO: connected: discover services + delegate + Main -> Action.connectPeripheral
     
     func centralManager(_ central: CBCentralManagerProtocol, didConnect peripheral: CBPeripheralProtocol) {
         
