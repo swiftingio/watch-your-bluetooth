@@ -1,16 +1,27 @@
 import CoreBluetooth
 
+
 public protocol CBCentralManagerProtocol: class {
+    
     var delegate: CBCentralManagerDelegate? { get set }
     var state: CBManagerState { get }
+    
+    func scanForPeripherals(withServices serviceUUIDs: [CBUUID]?, options: [String : Any]?)
     func stopScan()
+    
     func retrievePeripherals(withIdentifiers identifiers: [UUID]) -> [CBPeripheral]
     func retrieveConnectedPeripherals(withServices serviceUUIDs: [CBUUID]) -> [CBPeripheral]
-    func scanForPeripherals(withServices serviceUUIDs: [CBUUID]?, options: [String : Any]?)
     func connect(_ peripheral: CBPeripheral, options: [String : Any]?)
     func connect(_ peripheral: CBPeripheralProtocol, options: [String: Any]?)
     func cancelPeripheralConnection(_ peripheral: CBPeripheral)
+    
 }
+
+
+
+
+
+
 
 extension CBCentralManager: CBCentralManagerProtocol {
     public func retrievePeripheral(withIdentifier identifier: UUID) -> CBPeripheralProtocol? {

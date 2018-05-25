@@ -63,10 +63,11 @@ class BirdCentral: NSObject {
 
 
 protocol BirdCentralDelegate: class {
+    
     func central(_ central: BirdCentral, didPerformAction: BirdCentral.Action)
     
-    //InterfaceController -> watchOS
     //ViewController -> iOS
+    //InterfaceController -> watchOS
 }
 
 
@@ -211,8 +212,8 @@ extension BirdCentral: CBCentralManagerDelegateProtocol {
     
     
     
-
-    //TODO: peripheral found + stop + store + delegate + connect
+    
+    //TODO: peripheral found: stop + store + delegate + connect
     
     func centralManager(_ central: CBCentralManagerProtocol, didDiscover peripheral: CBPeripheralProtocol, advertisementData: [String : Any], rssi RSSI: NSNumber) {
         
@@ -240,8 +241,8 @@ extension BirdCentral: CBCentralManagerDelegateProtocol {
     
     
     
-
-    //TODO: failed + un-store + scan + Main - Action.connectPeripheral(true)
+    
+    //TODO: failed: un-store + scan + Main -> Action.connectPeripheral
     
     func centralManager(_ central: CBCentralManagerProtocol, didFailToConnect peripheral: CBPeripheralProtocol, error: Error?) {
         
@@ -269,8 +270,8 @@ extension BirdCentral: CBCentralManagerDelegateProtocol {
     
     
     
-
-    //TODO: connected: discover services + Main - Action.connectPeripheral(false)
+    
+    //TODO: connected: discover services + Main -> Action.connectPeripheral
     
     func centralManager(_ central: CBCentralManagerProtocol, didConnect peripheral: CBPeripheralProtocol) {
         
@@ -298,8 +299,8 @@ extension BirdCentral: CBCentralManagerDelegateProtocol {
     
     
     
-
-    //TODO: disconnected + reset + scan + Main - Action.disconnectPeripheral(Bool)
+    
+    //TODO: disconnected: reset + scan + Main -> Action.disconnectPeripheral
     
     func centralManager(_ central: CBCentralManagerProtocol, didDisconnectPeripheral peripheral: CBPeripheralProtocol, error: Error?) {
         
@@ -381,8 +382,8 @@ extension BirdCentral: CBPeripheralDelegateProtocol {
     
     
     
-
-    //TODO: services discovererd + discover characteristics
+    
+    //TODO: services discovererd: store + discover characteristics
     
     func peripheral(_ peripheral: CBPeripheralProtocol, didDiscoverServices error: Error?) {
         
@@ -410,8 +411,8 @@ extension BirdCentral: CBPeripheralDelegateProtocol {
     
     
     
-
-    //TODO: characteristics discovererd + read + subscribe + store
+    
+    //TODO: characteristics discovererd: read + subscribe + store
     
     func peripheral(_ peripheral: CBPeripheralProtocol, didDiscoverCharacteristicsFor service: CBServiceProtocol, error: Error?) {
         
@@ -439,8 +440,8 @@ extension BirdCentral: CBPeripheralDelegateProtocol {
     
     
     
-
-    //TODO: value updated + Main - Action.read(Value)
+    
+    //TODO: value updated: + Main -> Action.read
     
     func peripheral(_ peripheral: CBPeripheralProtocol, didUpdateValueFor characteristic: CBCharacteristicProtocol, error: Error?) {
         
