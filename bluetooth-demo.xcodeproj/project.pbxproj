@@ -14,6 +14,7 @@
 		5110545420B145D900F59678 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD30A61F0A25D000C0991F /* UIColor+Extension.swift */; };
 		513F2E9F20B1492200A2DD6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69C4F2BE1F00607600B76FCB /* LaunchScreen.storyboard */; };
 		513F2EA020B15E4800A2DD6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69C4F2BC1F00607600B76FCB /* Assets.xcassets */; };
+		5159D39920BEA69C00425F5E /* BirdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69FD30A91F0A25FE00C0991F /* BirdService.swift */; };
 		5165143F20B1BE5B007CF9FC /* CBCentralManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5165143E20B1BE5B007CF9FC /* CBCentralManagerProtocol.swift */; };
 		5165144020B1BE6C007CF9FC /* CBCentralManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5165143E20B1BE5B007CF9FC /* CBCentralManagerProtocol.swift */; };
 		5165144320B1BFDB007CF9FC /* CBPeripheralManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5165144120B1BFDB007CF9FC /* CBPeripheralManagerProtocol.swift */; };
@@ -570,6 +571,7 @@
 				5110544320B13FC900F59678 /* AppDelegate.swift in Sources */,
 				5110545220B13FFB00F59678 /* MyPeripheral.swift in Sources */,
 				5110545420B145D900F59678 /* UIColor+Extension.swift in Sources */,
+				5159D39920BEA69C00425F5E /* BirdService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
