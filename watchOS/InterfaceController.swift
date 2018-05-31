@@ -35,14 +35,16 @@ class InterfaceController: WKInterfaceController {
 
 extension InterfaceController: BirdCentralDelegate {
     func central(_ central: BirdCentral, didPerformAction action: BirdCentral.Action) {
-        switch action {
-        case .read(let value):
-            update(value)
-        case .connectPeripheral(_):
-            label.setText("connected")
-        case .disconnectPeripheral:
-            label.setText("disconnected")
-            udpateValues(from: central)
+        DispatchQueue.main.async {
+            switch action {
+            case .read(let value):
+                self.update(value)
+            case .connectPeripheral(_):
+                self.label.setText("connected")
+            case .disconnectPeripheral:
+                self.label.setText("disconnected")
+                self.udpateValues(from: central)
+            }
         }
     }
     
