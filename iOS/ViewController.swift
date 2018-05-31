@@ -23,14 +23,16 @@ class ViewController: UIViewController {
 
 extension ViewController: BirdCentralDelegate {
     func central(_ central: BirdCentral, didPerformAction action: BirdCentral.Action) {
-        switch action {
-        case .read(let value):
-            update(value)
-        case .connectPeripheral(_):
-            connection.text = "connected"
-        case .disconnectPeripheral:
-            connection.text = "disconnected"
-            udpateValues(from: central)
+        DispatchQueue.main.async {
+            switch action {
+            case .read(let value):
+                self.update(value)
+            case .connectPeripheral(_):
+                self.connection.text = "connected"
+            case .disconnectPeripheral:
+                self.connection.text = "disconnected"
+                self.udpateValues(from: central)
+            }
         }
     }
     
