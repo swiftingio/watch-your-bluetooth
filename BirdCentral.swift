@@ -151,9 +151,7 @@ extension BirdCentral: CBCentralManagerDelegateProtocol {
         print(error.debugDescription)
         self.peripheral = nil
         scanServices()
-        DispatchQueue.main.async {
-            self.delegate?.central(self, didPerformAction: Action.connectPeripheral(false))
-        }
+        delegate?.central(self, didPerformAction: Action.connectPeripheral(false))
     }
     
     //TODO: connected: discover services + Main - Action.connectPeripheral(false)
@@ -161,9 +159,7 @@ extension BirdCentral: CBCentralManagerDelegateProtocol {
     func centralManager(_ central: CBCentralManagerProtocol, didConnect peripheral: CBPeripheralProtocol) {
         peripheral.delegate = self
         peripheral.discoverServices([BirdService.uuid])
-        DispatchQueue.main.async {
-            self.delegate?.central(self, didPerformAction: Action.connectPeripheral(true))
-        }
+        delegate?.central(self, didPerformAction: Action.connectPeripheral(true))
     }
     
     //TODO: disconnected + un-store + scan + Main - Action.disconnectPeripheral(Bool)
@@ -171,9 +167,7 @@ extension BirdCentral: CBCentralManagerDelegateProtocol {
     func centralManager(_ central: CBCentralManagerProtocol, didDisconnectPeripheral peripheral: CBPeripheralProtocol, error: Error?) {
         if let error = error { print("DISCONNECTED ", peripheral, error) }
         reset()
-        DispatchQueue.main.async {
-            self.delegate?.central(self, didPerformAction: BirdCentral.Action.disconnectPeripheral)
-        }
+        delegate?.central(self, didPerformAction: BirdCentral.Action.disconnectPeripheral)
         scanServices()
     }
     
@@ -238,16 +232,14 @@ extension BirdCentral: CBPeripheralDelegateProtocol {
         default:
             return
         }
-        DispatchQueue.main.async {
-            self.delegate?.central(self, didPerformAction: .read(response))
-        }
+        delegate?.central(self, didPerformAction: .read(response))
     }
 }
 
 extension BirdCentral {
     
     //TODO: return a `BirdCentral` with queue and centralManager
-
+    
     class func create() -> BirdCentral! {
         let queue = DispatchQueue(label: "io.swifting.bluetooth")
         let centralManager = CBCentralManager(delegate: nil, queue: queue)
