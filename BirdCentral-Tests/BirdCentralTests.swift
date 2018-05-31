@@ -95,10 +95,10 @@ class BirdCentralTests: XCTestCase {
         sut.delegate = delegate
         centralManager.state = .poweredOn
         
-        let expectation = self.expectation(description: "Should notify delegate about connection failure")
+        var delegateCalled = false
         delegate.delegateAction = { action in
             if case BirdCentral.Action.connectPeripheral(false) = action {
-                expectation .fulfill()
+                delegateCalled = true
             }
         }
         
@@ -108,7 +108,7 @@ class BirdCentralTests: XCTestCase {
         //Then:
         XCTAssertNil(sut.peripheral)
         XCTAssertEqual(centralManager.scanForPeripheralsUUIDs, [BirdService.uuid], "Should scan for Bird Service UUID")
-        wait(for: [expectation], timeout: 0.1)
+        XCTAssertTrue(delegateCalled)
     }
     
     //MARK: Peripheral Connected
@@ -116,10 +116,10 @@ class BirdCentralTests: XCTestCase {
     func testPeripheralConnected() {
         //Given:
         sut.delegate = delegate
-        let expectation = self.expectation(description: "Should notify delegate about connection success")
+        var delegateCalled = false
         delegate.delegateAction = { action in
             if case BirdCentral.Action.connectPeripheral(true) = action {
-                expectation.fulfill()
+                delegateCalled = true
             }
         }
         
@@ -129,8 +129,7 @@ class BirdCentralTests: XCTestCase {
         //Then:
         XCTAssertTrue(peripheral.delegate === sut, "Should become peripheral's delegate")
         XCTAssertTrue(peripheral.discoverServicesCalled, "Should discover peripherals services")
-        wait(for: [expectation], timeout: 0.1)
-        
+        XCTAssertTrue(delegateCalled)
     }
     
     //MARK: Peripheral Disconnected
@@ -145,10 +144,10 @@ class BirdCentralTests: XCTestCase {
         sut.delegate = delegate
         centralManager.state = .poweredOn
         
-        let expectation = self.expectation(description: "Should notify delegate about peripheral disconnection")
+        var delegateCalled = false
         delegate.delegateAction = { action in
             if case BirdCentral.Action.disconnectPeripheral = action {
-                expectation.fulfill()
+                delegateCalled = true
             }
         }
         
@@ -161,7 +160,7 @@ class BirdCentralTests: XCTestCase {
         XCTAssertNil(sut.nameCharacteristic, "Should reset peripheral data")
         XCTAssertNil(sut.alphaCharacteristic, "Should reset peripheral data")
         XCTAssertNil(sut.colorCharacteristic, "Should reset peripheral data")
-        self.wait(for: [expectation], timeout: 0.1)
+        XCTAssertTrue(delegateCalled)
         XCTAssertEqual(centralManager.scanForPeripheralsUUIDs, [BirdService.uuid], "Should scan for Bird Service UUID")
     }
     
@@ -237,10 +236,10 @@ class BirdCentralTests: XCTestCase {
         //Given:
         let characteristic = CBMutableCharacteristic(type: BirdService.nameCharacteristicUUID, properties: [.read, .notify], value: nil, permissions: [.readable])
         sut.delegate = delegate
-        let expectation = self.expectation(description: "Should notify delegate about peripheral disconnection")
+        var delegateCalled = false
         delegate.delegateAction = { action in
             if case BirdCentral.Action.read(BirdCentral.Value.name(_)) = action {
-                expectation.fulfill()
+                delegateCalled = true
             }
         }
         
@@ -248,17 +247,17 @@ class BirdCentralTests: XCTestCase {
         sut.peripheral(peripheral, didUpdateValueFor: characteristic, error: nil)
         
         //Then:
-        wait(for: [expectation], timeout: 0.1)
+        XCTAssertTrue(delegateCalled)
     }
     
     func testDidUpdateValueForCharacteristicAlpha() {
         //Given:
         let characteristic = CBMutableCharacteristic(type: BirdService.alphaCharacteristicUUID, properties: [.read, .notify], value: nil, permissions: [.readable])
         sut.delegate = delegate
-        let expectation = self.expectation(description: "Should notify delegate about peripheral disconnection")
+        var delegateCalled = false
         delegate.delegateAction = { action in
             if case BirdCentral.Action.read(BirdCentral.Value.alpha(_)) = action {
-                expectation.fulfill()
+                delegateCalled = true
             }
         }
         
@@ -266,17 +265,17 @@ class BirdCentralTests: XCTestCase {
         sut.peripheral(peripheral, didUpdateValueFor: characteristic, error: nil)
         
         //Then:
-        wait(for: [expectation], timeout: 0.1)
+        XCTAssertTrue(delegateCalled)
     }
     
     func testDidUpdateValueForCharacteristicColor() {
         //Given:
         let characteristic = CBMutableCharacteristic(type: BirdService.colorCharacteristicUUID, properties: [.read, .notify], value: nil, permissions: [.readable])
         sut.delegate = delegate
-        let expectation = self.expectation(description: "Should notify delegate about peripheral disconnection")
+        var delegateCalled = false
         delegate.delegateAction = { action in
             if case BirdCentral.Action.read(BirdCentral.Value.color(_)) = action {
-                expectation.fulfill()
+                delegateCalled = true
             }
         }
         
@@ -284,17 +283,16 @@ class BirdCentralTests: XCTestCase {
         sut.peripheral(peripheral, didUpdateValueFor: characteristic, error: nil)
         
         //Then:
-        wait(for: [expectation], timeout: 0.1)
+        XCTAssertTrue(delegateCalled)
     }
     
     func testDidUpdateValueForCharacteristicWithError() {
         //Given:
         let characteristic = CBMutableCharacteristic(type: BirdService.colorCharacteristicUUID, properties: [.read, .notify], value: nil, permissions: [.readable])
         sut.delegate = delegate
-        let expectation = self.expectation(description: "Should notify delegate about peripheral disconnection")
-        expectation.isInverted = true
+        var delegateCalled = false
         delegate.delegateAction = { action in
-            expectation.fulfill()
+            delegateCalled = true
         }
         let error = NSError(domain: "something went wrong", code: 1, userInfo: nil)
         
@@ -302,7 +300,7 @@ class BirdCentralTests: XCTestCase {
         sut.peripheral(peripheral, didUpdateValueFor: characteristic, error: error)
         
         //Then:
-        wait(for: [expectation], timeout: 0.1)
+        XCTAssertFalse(delegateCalled)
     }
     
     //MARK: Interface Methods
